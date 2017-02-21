@@ -1,0 +1,1 @@
+- $f | sed 's/chr//' | sed 's/X/23/' | sed 's/Y/24/' | sed 's/M/25/' | awk '{a[$1][int($2/WIN_SIZE)] += (min($2%WIN_SIZE,($3-$2)/WIN_SIZE)) 

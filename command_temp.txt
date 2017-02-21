@@ -1,0 +1,1 @@
+samtools depth bam_files/ENCFF226VZT.bam | head -100 | awk -v WIN_SIZE=1000 -v chr=chr -v loc=1000 -v sum=0 -v i=1 '{if ( != (chr i)) {i+=1; loc = WIN_SIZE; sum = 0}}{while (==(chr i))if(<loc){sum+=; print , loc, sum; break}else {print chr i, loc, loc+WIN_SIZE, sum; loc += WIN_SIZE; sum = 0}}'
